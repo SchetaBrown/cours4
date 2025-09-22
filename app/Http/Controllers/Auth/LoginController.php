@@ -26,8 +26,6 @@ class LoginController extends BaseAuthController
 
     public function destroy()
     {
-        $this->authService->logout();
-
-        return redirect()->route('index');
+        return $this->authService->logout();
     }
 }

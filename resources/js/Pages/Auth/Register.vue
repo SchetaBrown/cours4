@@ -5,7 +5,13 @@ import AuthLayout from "../../Layouts/AuthLayout.vue";
 import SendButton from "../../Components/UI/Auth/SendButton.vue";
 import Return from "./../../Components/UI/Button/Return.vue";
 import Socialite from "../../Components/UI/Auth/Socialite.vue";
-const form = useForm([]);
+
+const form = useForm({
+  login: "",
+  email: "",
+  password: "",
+});
+
 const btnTitle = "Регистрация";
 const inputTags = [
   {

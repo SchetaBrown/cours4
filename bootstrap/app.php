@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\AuthMiddleware;
 use App\Http\Middleware\CheckDocumentsMiddleware;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -13,11 +14,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
+            'isAuth' => AuthMiddleware::class,
             'checkDocument' => CheckDocumentsMiddleware::class,
-        ]);
-
-        $middleware->web(append: [
-            \App\Http\Middleware\HandleInertiaRequests::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

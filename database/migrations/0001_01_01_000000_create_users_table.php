@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('login')->default('default_login');
+            $table->string('login')->default('user_' . Str::random(8));
             $table->string('surname')->nullable();
             $table->string('name')->nullable();
             $table->string('patronymic')->nullable();

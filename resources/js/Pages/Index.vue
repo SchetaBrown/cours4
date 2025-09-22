@@ -1,9 +1,10 @@
 <script setup>
-import { router } from "@inertiajs/vue3";
 import { storeToRefs } from "pinia";
+import { provide } from "vue";
 import SortBlock from "./../Components/UI/SortSection/SortBlock.vue";
 import { useCarStore } from "./../Stores/car.js";
 import { useUserStore } from "./../Stores/user";
+import SmallCarCardSection from "./../Components/UI/CarCard/SmallCarCard/SmallCarCardSection.vue";
 
 const props = defineProps({
   isAuth: {
@@ -24,13 +25,13 @@ const carStore = useCarStore();
 
 userStore.setUserAuthStatus(props.isAuth);
 carStore.setCategories(props.carCatetories);
-
-console.log(props.cars)
+carStore.setCars(props.cars);
 </script>
 
 <template>
   <AppLayout>
     <SortBlock></SortBlock>
+    <SmallCarCardSection></SmallCarCardSection>
   </AppLayout>
 </template>
 

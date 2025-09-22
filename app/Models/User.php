@@ -95,8 +95,8 @@ class User extends Authenticatable
         return $this->role === 'admin' ? true : false;
     }
 
-    protected function toLowerCase($data)
+    public function getCreatedAtFormattedAttribute()
     {
-        return strtolower($data);
+        return $this->created_at->format('d.m.Y H:i');
     }
 }

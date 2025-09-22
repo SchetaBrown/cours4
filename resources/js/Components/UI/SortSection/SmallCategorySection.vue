@@ -15,5 +15,6 @@ import SmallCategory from "./SmallCategory.vue";
   justify-content: space-between;
   gap: 15px;
   max-width: 845px;
+  width: 100%;
 }
 </style>

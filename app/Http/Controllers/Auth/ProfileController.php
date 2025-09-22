@@ -3,13 +3,17 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Inertia\Inertia;
+use App\Repositories\Interface\UserRepositoryInterface;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function index(UserRepositoryInterface $userService)
     {
-        return inertia('Profile');
+        $userInfo = $userService->getEntityById(Auth::id());
+        return inertia('Profile', [
+            'userInfo' => $userInfo,
+        ]);
     }
 
     public function store() {}

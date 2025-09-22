@@ -12,6 +12,7 @@ import SmallCategorySection from "./SmallCategorySection.vue";
 .sort-block {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 25px;
 }
 </style>

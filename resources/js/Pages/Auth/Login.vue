@@ -1,4 +1,5 @@
 <script setup>
+import Socialite from './../../Components/UI/Auth/Socialite.vue'
 import AuthInput from "../../Components/UI/Auth/AuthInput.vue";
 import SendButton from "../../Components/UI/Auth/SendButton.vue";
 import AuthLayout from "../../Layouts/AuthLayout.vue";

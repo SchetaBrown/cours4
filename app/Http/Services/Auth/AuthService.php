@@ -22,6 +22,8 @@ class AuthService implements AuthServiceInterface
         session()->forget('auth');
         session()->flush();
         session()->regenerate(true);
+
+        return redirect()->route('index');
     }
 
     public function register($data)

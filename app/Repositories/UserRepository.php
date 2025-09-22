@@ -12,7 +12,7 @@ class UserRepository implements UserRepositoryInterface
 {
     public function getEntityById($id): ?User
     {
-        return User::findOrFail($id);
+        return User::with(['achievements'])->where('id', $id)->first();
     }
 
     public function createEntity($data)

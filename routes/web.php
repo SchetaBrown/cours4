@@ -1,8 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\{LoginController, ProfileController, RegisterController, SocialiteController};
-use App\Models\CarCategory;
-use App\Models\CarModel;
+use App\Models\{CarCategory, CarModel};
 use Illuminate\Support\Facades\Route;
 
 // Главная страница
@@ -23,7 +22,7 @@ Route::controller(LoginController::class)->name('login.')->group(function () {
         Route::get('/', 'index')->name('index');  // Страница авторизации
         Route::post('/', 'store')->name('store');  // Маршрут для входа в систему
     });
-    Route::post('/logout', 'destroy')->middleware('auth')->name('destroy');  // Маршрут для выхода из системы
+    Route::post('/logout', 'destroy')->middleware('isAuth')->name('destroy');  // Маршрут для выхода из системы
 });
 
 // Авторизация через внешние сервисы
@@ -39,7 +38,7 @@ Route::controller(RegisterController::class)->name('register.')->prefix('registe
 });
 
 // Защищенные маршруты
-Route::middleware('auth')->group(function () {
+Route::middleware(['isAuth'])->group(function () {
     Route::controller(ProfileController::class)->name('profile.')->prefix('profile')->group(function () {
         Route::get('/', 'index')->name('index');  // Страница профиля пользователя
         Route::post('/update', 'update')->name('update');  // Обновление пароля

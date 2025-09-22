@@ -3,35 +3,55 @@
 return [
     'categories' => [  // Типы кузовов автомобилей
         [
-            'title' => 'Седан',
+            'title' => 'седан',
         ],
         [
-            'title' => 'Хэтчбек',
+            'title' => 'хэтчбек',
         ],
         [
-            'title' => 'Внедорожник',
+            'title' => 'внедорожник',
         ],
         [
-            'title' => 'Кроссовер',
+            'title' => 'кроссовер',
         ],
         [
-            'title' => 'Универсал',
+            'title' => 'универсал',
         ],
         [
-            'title' => 'Купе',
+            'title' => 'купе',
         ],
         [
-            'title' => 'Пикап',
+            'title' => 'пикап',
         ],
         [
-            'title' => 'Фургон',
+            'title' => 'фургон',
         ],
         [
-            'title' => 'Минивен',
+            'title' => 'минивен',
         ],
     ],
     'car_brands' => [
-        ''
+        [
+            'title' => 'toyota'
+        ],
+        [
+            'title' => 'nissan'
+        ],
+        [
+            'title' => 'mitsubishi'
+        ],
+        [
+            'title' => 'mazda'
+        ],
+        [
+            'title' => 'saab'
+        ],
+        [
+            'title' => 'bmw'
+        ],
+        [
+            'title' => 'mitsubishi'
+        ],
     ],
     'models' => []
 ];

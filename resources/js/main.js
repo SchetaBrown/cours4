@@ -3,10 +3,12 @@ import { createInertiaApp, Link } from '@inertiajs/vue3'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/index.js'
 import { createPinia } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import AppLayout from "./Layouts/AppLayout.vue";
 import '../css/main.css'
 
 const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate)
 
 createInertiaApp({
     resolve: (name) => resolvePageComponent(
