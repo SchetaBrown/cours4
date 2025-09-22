@@ -1,7 +1,10 @@
 <script setup>
-import { inject } from "vue";
+import { storeToRefs } from "pinia";
+import { useUserStore } from "./../../../Stores/user.js";
 import Logotype from "./Logotype.vue";
-const isAuth = inject("isAuth");
+
+const userStore = useUserStore();
+const { isAuth } = storeToRefs(userStore);
 </script>
 
 <template>

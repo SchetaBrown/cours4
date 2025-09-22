@@ -1,13 +1,19 @@
 <?php
 
 use App\Http\Controllers\Auth\{LoginController, ProfileController, RegisterController, SocialiteController};
+use App\Models\CarCategory;
+use App\Models\CarModel;
 use Illuminate\Support\Facades\Route;
 
 // Главная страница
 Route::get('/', function () {
     $isAuth = Auth::check();
+    $carCatetories = CarCategory::get();
+    $cars = CarModel::get();
     return inertia('Index', [
-        'isAuth' => $isAuth
+        'isAuth' => $isAuth,
+        'carCatetories' => $carCatetories,
+        'cars' => $cars
     ]);
 })->name('index');
 

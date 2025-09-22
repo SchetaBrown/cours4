@@ -9,7 +9,7 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        return inertia('Pages/Profile/Profile');
+        return inertia('Profile');
     }
 
     public function store() {}

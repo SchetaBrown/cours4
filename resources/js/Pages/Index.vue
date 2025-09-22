@@ -1,23 +1,36 @@
 <script setup>
 import { router } from "@inertiajs/vue3";
-import { provide } from "vue";
+import { storeToRefs } from "pinia";
+import SortBlock from "./../Components/UI/SortSection/SortBlock.vue";
+import { useCarStore } from "./../Stores/car.js";
+import { useUserStore } from "./../Stores/user";
 
 const props = defineProps({
   isAuth: {
     type: Boolean,
   },
+  carCatetories: {
+    type: Object,
+    required: true,
+  },
+  cars: {
+    type: Object,
+    required: true,
+  },
 });
 
-provide('isAuth', props.isAuth)
+const userStore = useUserStore();
+const carStore = useCarStore();
 
-const logout = () => {
-  router.post("/logout");
-};
+userStore.setUserAuthStatus(props.isAuth);
+carStore.setCategories(props.carCatetories);
+
+console.log(props.cars)
 </script>
 
 <template>
   <AppLayout>
-    <button v-if="props.isAuth" @click="logout">Выйти</button>
+    <SortBlock></SortBlock>
   </AppLayout>
 </template>
 

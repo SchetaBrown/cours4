@@ -30,5 +30,8 @@ return [
             'title' => 'Минивен',
         ],
     ],
+    'car_brands' => [
+        ''
+    ],
     'models' => []
 ];

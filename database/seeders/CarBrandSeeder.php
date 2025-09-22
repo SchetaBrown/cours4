@@ -12,6 +12,6 @@ class CarBrandSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        
     }
 }
