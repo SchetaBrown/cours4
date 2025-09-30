@@ -10,7 +10,7 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    public const SINGLON = [
+    protected const SINGLON = [
         AuthServiceInterface::class => AuthService::class,
         IntegrationAuthServiceInterface::class => IntegrationAuthService::class,
     ];
@@ -33,14 +33,7 @@ class AppServiceProvider extends ServiceProvider
         Event::listen(function (\SocialiteProviders\Manager\SocialiteWasCalled $event) {
             $event->extendSocialite('github', \SocialiteProviders\GitHub\Provider::class);
             $event->extendSocialite('google', \SocialiteProviders\Google\Provider::class);
+            $event->extendSocialite('yandex', \SocialiteProviders\Yandex\Provider::class);
         });
-
-        // if (app()->environment('local')) {
-        //     $this->app->bind(Client::class, function () {
-        //         return new Client([
-        //             'verify' => false,
-        //         ]);
-        //     });
-        // }
     }
 }

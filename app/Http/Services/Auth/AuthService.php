@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthService implements AuthServiceInterface
 {
     public function __construct(
-        private UserRepositoryInterface $userRepository
+        private readonly UserRepositoryInterface $userRepository
     ) {}
 
     public function login($data)

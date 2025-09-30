@@ -5,7 +5,7 @@ import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/index.js'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import AppLayout from "./Layouts/AppLayout.vue";
-import '../css/main.css'
+import './assets/styles/main.css';
 
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate)

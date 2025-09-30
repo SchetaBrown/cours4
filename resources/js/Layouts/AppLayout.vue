@@ -1,23 +1,13 @@
 <script setup>
-import Header from "../Components/UI/Partials/Header.vue";
-import Footer from "../Components/UI/Partials/Footer.vue";
+import AppHeader from "../components/layout/AppHeader.vue";
+import AppFooter from "../components/layout/AppFooter.vue";
 </script>
-
 <template>
-  <Header></Header>
-
-  <main class="main-container">
+  <AppHeader></AppHeader>
+  <main class="main">
     <slot />
   </main>
-
-  <Footer></Footer>
+  <AppFooter></AppFooter>
 </template>
-
 <style scoped>
-.main-container {
-  margin-top: 40px;
-  margin-bottom: 60px;
-  width: 100%;
-}
 </style>
-

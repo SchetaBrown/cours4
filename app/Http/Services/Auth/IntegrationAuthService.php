@@ -28,7 +28,7 @@ class IntegrationAuthService implements IntegrationAuthServiceInterface
         } else {
             $user = $this->userRepository->getEntityByEmailWithSocial($socialUser);
             if (!$user) {
-                // Присваиваем созданного пользователя переменной $user!
+                // Присваиваем созданного пользователя переменной $user
                 $user = $this->userRepository->createEntity([
                     'login' => $socialUser->getNickname(),
                     'email' => $socialUser->getEmail(),
