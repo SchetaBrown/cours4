@@ -11,19 +11,24 @@ export const useCarStore = defineStore('car', () => {
         return carCategories.value.length;
     });
 
+    const carCount = computed(() => {
+        return carsInfo.value.length;
+    });
+
     // сеттеры
     function setCarCategories(categories) {
         carCategories.value = categories;
     }
 
-    function setCarsInfo(carsInfo) {
-        carsInfo.value = carsInfo;
+    function setCarsInfo(cars) {
+        carsInfo.value = cars;
     }
 
     return {
         carCategories,
         carsInfo,
         carCategoriesCount,
+        carCount,
         setCarCategories,
         setCarsInfo,
     }

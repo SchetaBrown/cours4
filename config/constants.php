@@ -53,5 +53,20 @@ return [
             'title' => 'mitsubishi'
         ],
     ],
-    'models' => []
+    'models' => [
+        [
+            'title' => 'mark 2',
+            'engine_fuel_type' => 'gasoline',
+            'transmission' => 'AT',
+            'car_brand_id' => 1,
+            'car_category_id' => 1,
+        ],
+        [
+            'title' => 'chaser',
+            'engine_fuel_type' => 'gasoline',
+            'transmission' => 'AT',
+            'car_brand_id' => 1,
+            'car_category_id' => 1,
+        ],
+    ],
 ];

@@ -12,10 +12,6 @@
     font-size: 16px;
 }
 
-body {
-
-}
-
 button {
     cursor: pointer;
 }
@@ -23,9 +19,9 @@ button {
 #app {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-block-size: 100vh;
+    height: 100vh;
     padding: 0 155px;
+    background-color: #E5E7EB;
 }
 
 li {
@@ -34,6 +30,7 @@ li {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 .center {
