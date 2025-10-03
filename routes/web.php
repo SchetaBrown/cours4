@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $isAuth = Auth::check();
     $carCatetories = CarCategory::get();
-    $cars = CarModel::get();
+    $cars = CarModel::with(['carCategory', 'carBrand'])->get();
     return inertia('Index', [
         'isAuth' => $isAuth,
         'carCatetories' => $carCatetories,

@@ -13,6 +13,6 @@ class CarCategory extends Model
 
     public function carModel()
     {
-        return $this->hasMany(CarModel::class, 'car_category_ids');
+        return $this->hasMany(CarModel::class, 'car_category_id');
     }
 }

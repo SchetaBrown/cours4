@@ -19,7 +19,8 @@ button {
 #app {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    align-items: center;
+    height: max-content;
     padding: 0 155px;
     background-color: #E5E7EB;
 }
@@ -39,6 +40,22 @@ a {
     align-items: center;
 }
 
+@media (width:1440px) {
+    * {
+        font-size: 12px;
+    }
+
+    #app {
+        padding: 0 60px;
+    }
+}
+
+@media (width:1024px) {
+    #app {
+        padding: 0 60px;
+    }
+}
+
 @media (max-width:768px) {
     #app {
         padding: 0 30px;
@@ -48,11 +65,5 @@ a {
 @media (width:425px) {
     #app {
         padding: 0 15px;
-    }
-}
-
-@media (width:1024px) {
-    #app {
-        padding: 0 60px;
     }
 }

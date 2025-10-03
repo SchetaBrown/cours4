@@ -1,9 +1,9 @@
 <script setup>
 // импорты и props
 const props = defineProps(["isAuth", "carCatetories", "cars"]);
-import { storeToRefs } from "pinia";
 import SortSection from "../components/layout/sort/pages/index/SortSection.vue";
 import AppLayout from "./../Layouts/AppLayout.vue";
+import CarCard from "../components/layout/CarCard/CarCard.vue";
 import { useCarStore } from "./../stores/CarStore.js";
 import { useUserStore } from "./../stores/UserStore.js";
 
@@ -17,7 +17,6 @@ userStore.setUserAuthStatus(props.isAuth);
 
 // другие значения
 const carCount = carStore.carCount;
-console.log(carCount);
 </script>
 <template>
   <AppLayout>
@@ -25,7 +24,9 @@ console.log(carCount);
     <div class="cars-amount-block">
       <div class="cars-amount">Найдено автомобилей: {{ carCount }}</div>
     </div>
-    <div class="car-section"></div>
+    <div class="car-section">
+      <CarCard />
+    </div>
   </AppLayout>
 </template>
 <style scoped>
@@ -35,9 +36,20 @@ console.log(carCount);
   margin-top: 40px;
 }
 
+.cars-amount {
+  font-size: 1.4rem;
+}
+
 .car-section {
   display: flex;
   gap: 15px;
   margin-top: 40px;
+}
+
+@media (max-width: 1440px) {
+  .car-section {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
 </style>

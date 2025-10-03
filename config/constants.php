@@ -68,5 +68,19 @@ return [
             'car_brand_id' => 1,
             'car_category_id' => 1,
         ],
+        [
+            'title' => 'cresta',
+            'engine_fuel_type' => 'gasoline',
+            'transmission' => 'AT',
+            'car_brand_id' => 1,
+            'car_category_id' => 1,
+        ],
+        [
+            'title' => 'altezza',
+            'engine_fuel_type' => 'gasoline',
+            'transmission' => 'MT',
+            'car_brand_id' => 1,
+            'car_category_id' => 1,
+        ],
     ],
 ];

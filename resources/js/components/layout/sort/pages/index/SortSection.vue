@@ -21,6 +21,8 @@
   height: 75px;
   width: 100%;
   border-radius: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
   background-color: #d9d9d9;
 }
 </style>

@@ -18,6 +18,7 @@ footer.footer {
   padding: 35px 100px;
   background-color: #d9d9d9;
   border-radius: 25px 25px 0 0;
+  margin-top: 80px;
 }
 
 .about-company-section {
