@@ -18,4 +18,10 @@
   border-radius: 8px;
   font-size: 1.5rem;
 }
+
+@media (max-width:768px) {
+    .card-image {
+        min-height: 250px;
+    }
+}
 </style>

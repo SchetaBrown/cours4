@@ -18,4 +18,11 @@ import AppFooter from "../components/layout/AppFooter.vue";
   max-width: 1620px;
   width: 100%;
 }
+
+@media (max-width: 1440px) {
+  #container,
+  main.main {
+    max-width: 1280px;
+  }
+}
 </style>

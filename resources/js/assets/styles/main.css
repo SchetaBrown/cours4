@@ -40,7 +40,7 @@ a {
     align-items: center;
 }
 
-@media (width:1440px) {
+@media (max-width:1440px) {
     * {
         font-size: 12px;
     }
@@ -50,7 +50,7 @@ a {
     }
 }
 
-@media (width:1024px) {
+@media (max-width:1024px) {
     #app {
         padding: 0 60px;
     }
@@ -62,7 +62,7 @@ a {
     }
 }
 
-@media (width:425px) {
+@media (max-width:425px) {
     #app {
         padding: 0 15px;
     }

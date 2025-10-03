@@ -15,7 +15,8 @@ return new class extends Migration {
             $table->string('title');
             $table->enum('engine_fuel_type', ['gasoline', 'diesel', 'hybrid', 'electric']);
             $table->enum('transmission', ['AT', 'MT']);
-
+            $table->integer('cost_per_day');
+            $table->integer('seat_quantity');
             // Внешние ключи
             $table
                 ->foreignId('car_brand_id')
