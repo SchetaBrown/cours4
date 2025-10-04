@@ -15,7 +15,6 @@ return new class extends Migration {
             $table->string('title');
             $table->string('description');
             $table->string('image');
-            $table->integer('threshold')->nullable();
             $table->integer('points_reward')->default(0);
             $table->boolean('is_secret')->default(false);
             $table->timestamps();

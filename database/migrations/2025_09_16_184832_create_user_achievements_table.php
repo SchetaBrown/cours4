@@ -12,11 +12,20 @@ return new class extends Migration {
     {
         Schema::create('user_achievements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('achievement_id')->constrained()->onDelete('cascade');
+
             $table->integer('progress')->default(0);
             $table->boolean('is_unlocked')->default(false);
             $table->timestamp('unlocked_at')->nullable();
+
+            $table
+                ->foreignId('user_id')
+                ->constrained()
+                ->onDelete('cascade');
+            $table
+                ->foreignId('achievement_id')
+                ->constrained()
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }
