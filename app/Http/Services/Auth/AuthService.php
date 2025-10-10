@@ -10,7 +10,13 @@ class AuthService implements AuthServiceInterface
 {
     public function __construct(
         private readonly UserRepositoryInterface $userRepository
-    ) {}
+    ) {
+    }
+
+    public function checkAuthUser(): bool
+    {
+        return Auth::check();
+    }
 
     public function login($data)
     {

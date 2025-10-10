@@ -9,8 +9,22 @@
 
 <style scoped>
 .logotype {
-    display: flex;
-    align-items: center;
-    gap: ;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.logotype > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 150px;
+  color: var(--white-color);
+  background-color: var(--dark-red-color);
+  font-size: 1.5rem;
 }
 </style>

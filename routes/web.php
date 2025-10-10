@@ -1,20 +1,11 @@
 <?php
 
 use App\Http\Controllers\Auth\{LoginController, ProfileController, RegisterController, SocialiteController};
-use App\Models\{CarCategory, CarModel};
+use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
 // Главная страница
-Route::get('/', function () {
-    $isAuth = Auth::check();
-    $carCatetories = CarCategory::get();
-    $cars = CarModel::with(['carCategory', 'carBrand'])->get();
-    return inertia('Index', [
-        'isAuth' => $isAuth,
-        'carCatetories' => $carCatetories,
-        'cars' => $cars
-    ]);
-})->name('index');
+Route::get('/', [IndexController::class, 'index'])->name('index');
 
 // Авторизация
 Route::controller(LoginController::class)->name('login.')->group(function () {

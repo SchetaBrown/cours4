@@ -2,14 +2,23 @@
 
 namespace App\Repositories;
 
+use App\Models\CarCategory;
 use App\Models\CarModel;
+use App\Repositories\Interface\CarRepositoryInterface;
 
-class CarRepository
+class CarRepository implements CarRepositoryInterface
 {
-    public function getAllEntity()
+    public function getAllCars()
     {
         return CarModel::with(['carCategory', 'carBrand'])->paginate(12);
     }
 
-    public function getEntityById($id) {}
+    public function getAllCategories()
+    {
+        return CarCategory::get();
+    }
+
+    public function getEntityById($id)
+    {
+    }
 }
