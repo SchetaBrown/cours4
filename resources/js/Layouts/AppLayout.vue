@@ -1,28 +1,16 @@
 <script setup>
-import AppHeader from "../components/layout/AppHeader.vue";
-import AppFooter from "../components/layout/AppFooter.vue";
+import AppHeader from '../components/layout/partials/AppHeader.vue';
+import AppFooter from '../components/layout/partials/AppFooter.vue';
 </script>
-<template>
-  <div id="container">
-    <AppHeader></AppHeader>
-    <main class="main">
-      <slot />
-    </main>
-    <AppFooter></AppFooter>
-  </div>
-</template>
-<style scoped>
-#container {
-  display: flex;
-  flex-direction: column;
-  max-width: 1620px;
-  width: 100%;
-}
 
-@media (max-width: 1440px) {
-  #container,
-  main.main {
-    max-width: 1280px;
-  }
-}
+<template>
+    <AppHeader />
+    <main class="main">
+        <slot />
+    </main>
+    <AppFooter />
+</template>
+
+<style>
+
 </style>
