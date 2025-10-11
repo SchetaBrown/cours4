@@ -62,6 +62,7 @@ return [
             'car_brand_id' => 1,
             'seat_quantity' => 4,
             'car_category_id' => 1,
+            'isFree' => true,
         ],
         [
             'title' => 'chaser',
@@ -71,6 +72,7 @@ return [
             'car_brand_id' => 1,
             'seat_quantity' => 4,
             'car_category_id' => 1,
+            'isFree' => true,
         ],
         [
             'title' => 'cresta',
@@ -80,6 +82,7 @@ return [
             'car_brand_id' => 1,
             'seat_quantity' => 4,
             'car_category_id' => 1,
+            'isFree' => true,
         ],
         [
             'title' => 'altezza',
@@ -89,6 +92,7 @@ return [
             'car_brand_id' => 1,
             'seat_quantity' => 4,
             'car_category_id' => 1,
+            'isFree' => true,
         ],
     ],
 ];

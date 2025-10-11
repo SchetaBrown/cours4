@@ -10,7 +10,7 @@ class CarRepository implements CarRepositoryInterface
 {
     public function getAllCars()
     {
-        return CarModel::with(['carCategory', 'carBrand'])->paginate(12);
+        return CarModel::with(['carCategory', 'carBrand'])->paginate(1);
     }
 
     public function getAllCategories()
@@ -20,5 +20,6 @@ class CarRepository implements CarRepositoryInterface
 
     public function getEntityById($id)
     {
+        return CarModel::findOrFail($id);
     }
 }

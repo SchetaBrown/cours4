@@ -18,34 +18,41 @@ CAR_STORE.setCarsInfo(PROPS.cars);
 
 // Другое
 const CAR_COUNT = CAR_STORE.carCount;
-console.log(PROPS.cars.data);
+
+console.log(PROPS.cars);
 </script>
 
 <template>
-    <AppLayout>
-        <div class="container">
-            <FilterSidebar />
-            <div class="content-block">
-                <!-- <h2>{{ CAR_COUNT }}</h2> -->
-                <CarCard
-                    v-for="car in cars.data"
-                    :key="car.id"
-                    :title="car.title"
-                />
-            </div>
-        </div>
-    </AppLayout>
+  <AppLayout>
+    <div class="container">
+      <FilterSidebar />
+      <div class="content-block">
+        <CarCard
+          v-for="car in cars.data"
+          :carBrand="car.car_brand.title"
+          :key="car.id"
+          :id="car.id"
+          :cost="car.cost_per_day"
+          :title="car.title"
+          :caseType="car.car_category.title"
+          :tranmission="car.transmission"
+          :fuelType="car.engine_fuel_type"
+        />
+      </div>
+    </div>
+  </AppLayout>
 </template>
 
 <style scoped>
 .container {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  gap: 40px;
 }
 
 .content-block {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 </style>

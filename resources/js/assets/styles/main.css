@@ -1,19 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,600;1,14..32,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,600;1,14..32,600&display=swap");
+@import "tailwindcss";
 
 :root {
     --white-color: #fff;
-    --dark-red-color: #950C00;
-    --background-page-color: #E5E7EB;
+    --dark-red-color: #950c00;
+    --background-page-color: #e5e7eb;
     --black-color: #000;
-    --line-color: #D7D7D7;
-    --add-info-color: #4C4C4C;
+    --line-color: #d7d7d7;
+    --add-info-color: #4c4c4c;
 }
 
 * {
     font-family: "Inter", sans-serif;
-    padding: 0;
-    border: 0;
-    margin: 0;
     box-sizing: border-box;
     font-size: 16px;
 }
@@ -30,8 +28,8 @@ body {
 
 #app {
     height: fit-content;
-    padding: 0 155px;
     max-width: 1440px;
+    padding: 0 80px;
     width: 100%;
 }
 

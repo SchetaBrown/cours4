@@ -13,10 +13,13 @@ return new class extends Migration {
         Schema::create('car_models', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('image')->nullable();
             $table->enum('engine_fuel_type', ['gasoline', 'diesel', 'hybrid', 'electric']);
             $table->enum('transmission', ['AT', 'MT']);
             $table->float('cost_per_day');
             $table->integer('seat_quantity');
+            $table->boolean('isFree');
+
             // Внешние ключи
             $table
                 ->foreignId('car_brand_id')

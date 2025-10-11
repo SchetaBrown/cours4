@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\{LoginController, ProfileController, RegisterController, SocialiteController};
+use App\Http\Controllers\Car\CarController;
 use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,10 @@ Route::controller(LoginController::class)->name('login.')->group(function () {
 Route::controller(SocialiteController::class)->name('socialite.')->group(function () {
     Route::get('/auth/{provider}', 'index')->name('redirect');
     Route::get('/auth/{provider}/callback', 'store')->name('callback');
+});
+
+Route::controller(CarController::class)->name('car.')->prefix('/cars')->group(function () {
+    Route::get('/{id}', 'index')->name('index');
 });
 
 // Регистрация

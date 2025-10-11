@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Requests\Auth\LoginRequest;
+use GuzzleHttp\Psr7\Request;
 use Inertia\Inertia;
 
 class LoginController extends BaseAuthController
@@ -14,14 +15,13 @@ class LoginController extends BaseAuthController
 
     public function store(LoginRequest $request)
     {
-        $data = $request->validated();
-        $isStore = $this->authService->login($data);
+        $isStore = $this->authService->login($request);
 
         if ($isStore) {
-            return redirect()->intended('/profile');
+            return redirect()->intended(route('profile.index'));
         }
 
-        return redirect()->back()->withErrors(['email' => 'Неверные учетные данные']);;
+        return redirect()->back()->withErrors(['email' => 'Неверные учетные данные']);
     }
 
     public function destroy()

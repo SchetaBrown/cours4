@@ -1,21 +1,108 @@
 <script setup>
+import { firstUpperCase } from "./../../../composables/methods/ExportMethods.js";
 import CarImage from "./CarImage.vue";
-const PROPS = defineProps(["title", "cost", "caseType"]);
+const PROPS = defineProps([
+  "id",
+  "carBrand",
+  "title",
+  "cost",
+  "caseType",
+  "tranmission",
+  "fuelType",
+]);
+
+function getFullName() {
+  return `${firstUpperCase(PROPS.carBrand)} ${firstUpperCase(PROPS.title)}`;
+}
 </script>
 
 <template>
   <div class="car-card">
     <CarImage :imageUrl="123"></CarImage>
-    <div class="car-info-block">
-        <div class="block">
-            <span class="props-data">{{ title }}</span>
-            <span class="add-data">{{ caseType }}</span>
-        </div>
-        <div class="block">
-            <span class="props-data">{{ cost }}</span>
-            <span class="add-data">Сутки</span>
-        </div>
+    <div class="car-info-block mt-[18px]">
+      <div class="block">
+        <span class="props-data">{{ getFullName() }}</span>
+        <span class="add-data">{{ firstUpperCase(caseType) }}</span>
+      </div>
+      <div class="block items-end">
+        <span class="props-data">{{ cost }} ₽</span>
+        <span class="add-data">Сутки</span>
+      </div>
     </div>
+    <div class="flex gap-[15px]">
+      <div class="mt-[15px] flex gap-[5px] items-center">
+        <svg
+          width="23"
+          height="23"
+          viewBox="0 0 23 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.428589 2.13424C0.428589 0.955531 1.38412 0 2.56283 0C3.74154 0 4.69707 0.955531 4.69707 2.13424C4.69707 3.02992 4.14532 3.79674 3.36317 4.11334V9.87086H10.2994V4.11334C9.51725 3.79674 8.96554 3.02992 8.96554 2.13424C8.96554 0.955531 9.92104 0 11.0998 0C12.2785 0 13.234 0.955531 13.234 2.13424C13.234 3.02992 12.6823 3.79674 11.9001 4.11334V9.87086H15.3683C16.397 9.87086 17.088 9.86915 17.6035 9.79989C18.0959 9.73362 18.3067 9.61923 18.4457 9.48018C18.5848 9.34114 18.6992 9.13038 18.7654 8.63791C18.8347 8.12245 18.8364 7.43143 18.8364 6.40272V4.11334C18.0542 3.79674 17.5025 3.02992 17.5025 2.13424C17.5025 0.955531 18.458 0 19.6367 0C20.8155 0 21.771 0.955531 21.771 2.13424C21.771 3.02992 21.2193 3.79674 20.4371 4.11334V6.4582C20.4371 7.41699 20.4372 8.2165 20.3518 8.85122C20.2618 9.52116 20.0636 10.126 19.5775 10.612C19.0915 11.098 18.4867 11.2962 17.8168 11.3863C17.182 11.4716 16.3826 11.4715 15.4238 11.4715H11.9001V17.2291C12.6823 17.5457 13.234 18.3125 13.234 19.2082C13.234 20.3869 12.2785 21.3424 11.0998 21.3424C9.92104 21.3424 8.96554 20.3869 8.96554 19.2082C8.96554 18.3125 9.51725 17.5457 10.2994 17.2291V11.4715H3.36317V17.2291C4.14532 17.5457 4.69707 18.3125 4.69707 19.2082C4.69707 20.3869 3.74154 21.3424 2.56283 21.3424C1.38412 21.3424 0.428589 20.3869 0.428589 19.2082C0.428589 18.3125 0.980332 17.5457 1.76249 17.2291V4.11334C0.980332 3.79674 0.428589 3.02992 0.428589 2.13424Z"
+            fill="#1C274C"
+          />
+          <path
+            opacity="0.5"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16.7021 13.8726C16.7021 13.4306 17.0605 13.0723 17.5025 13.0723H19.9416C21.4094 13.0723 22.5713 14.2823 22.5713 15.7401C22.5713 16.891 21.8471 17.8875 20.8197 18.256L22.4535 20.9246C22.6843 21.3015 22.5659 21.7943 22.1888 22.025C21.8119 22.2558 21.3191 22.1373 21.0884 21.7603L19.0358 18.4079H18.3028V21.3424C18.3028 21.7844 17.9445 22.1428 17.5025 22.1428C17.0605 22.1428 16.7021 21.7844 16.7021 21.3424V13.8726ZM18.3028 16.8072H19.9416C20.4945 16.8072 20.9706 16.345 20.9706 15.7401C20.9706 15.1351 20.4945 14.6729 19.9416 14.6729H18.3028V16.8072Z"
+            fill="#1C274C"
+          />
+        </svg>
+        <span v-if="tranmission === 'AT'">АКПП</span>
+        <span v-else>МКПП</span>
+      </div>
+      <div class="mt-[15px] flex gap-[5px] items-center">
+        <svg
+          width="25"
+          height="25"
+          viewBox="0 0 25 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M2.08337 13.6322C2.08337 11.4485 2.08337 10.3567 2.65968 9.52859C3.12493 8.86008 3.87342 8.49619 5.20837 8.00122V7.35426C5.20837 5.99485 5.20837 5.31515 5.56061 4.84691C5.65129 4.72636 5.75708 4.61846 5.87526 4.52596C6.3343 4.16667 7.00067 4.16667 8.33337 4.16667H9.18564C9.71404 4.16667 9.97824 4.16667 10.195 4.22591C10.7833 4.38669 11.2426 4.85534 11.4002 5.45534L11.4752 5.76071L14.602 4.64507C18.3895 3.2937 20.2832 2.61801 21.5999 3.57038C22.9167 4.52274 22.9167 6.56811 22.9167 10.6589V16.5452C22.9167 19.5488 22.9167 21.0505 22.0014 21.9835C21.0861 22.9167 19.613 22.9167 16.6667 22.9167H8.33337C5.38709 22.9167 3.91396 22.9167 2.99867 21.9835C2.08337 21.0505 2.08337 19.5488 2.08337 16.5452V13.6322ZM7.78095 10.9691C7.47585 10.664 7.47585 10.1693 7.78095 9.86424C8.08604 9.55915 8.58071 9.55915 8.8858 9.86424L10.4483 11.4268C10.4883 11.4667 10.523 11.5099 10.5525 11.5555C11.0042 11.4583 11.621 11.4583 12.5 11.4583C13.366 11.4583 13.9773 11.4583 14.4272 11.5513L16.1143 9.86424C16.4194 9.55915 16.914 9.55915 17.2191 9.86424C17.5242 10.1693 17.5242 10.664 17.2191 10.9691L15.5321 12.6561C15.625 13.106 15.625 13.7174 15.625 14.5833C15.625 15.4493 15.625 16.0606 15.5321 16.5105L17.2191 18.1976C17.5242 18.5027 17.5242 18.9973 17.2191 19.3024C16.914 19.6075 16.4194 19.6075 16.1143 19.3024L14.4272 17.6154C13.9773 17.7083 13.366 17.7083 12.5 17.7083C11.6341 17.7083 11.0227 17.7083 10.5729 17.6154L8.8858 19.3024C8.58071 19.6075 8.08604 19.6075 7.78095 19.3024C7.47585 18.9973 7.47585 18.5027 7.78095 18.1976L9.46799 16.5105C9.37504 16.0606 9.37504 15.4493 9.37504 14.5833C9.37504 13.7043 9.37504 13.0875 9.47227 12.6358C9.42664 12.6063 9.38342 12.5716 9.34345 12.5316L7.78095 10.9691Z"
+            fill="#1C274C"
+          />
+        </svg>
+        <span v-if="fuelType === 'gasoline'">Бензин</span>
+        <span v-if="fuelType === 'diesel'">Дизель</span>
+        <span v-if="fuelType === 'hybrid'">Гибрид</span>
+        <span v-if="fuelType === 'electric'">Микроволновка</span>
+      </div>
+    </div>
+    <Link :href="route('car.index', {id: id})" class="about-car">
+      Подробнее
+      <svg
+        width="12"
+        height="12"
+        viewBox="0 0 12 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="mt-[2px]"
+      >
+        <rect
+          x="5.65723"
+          width="8"
+          height="2"
+          rx="1"
+          transform="rotate(45 5.65723 0)"
+          fill="#D9D9D9"
+        />
+        <rect
+          x="4.24304"
+          y="9.90039"
+          width="8"
+          height="2"
+          rx="1"
+          transform="rotate(-45 4.24304 9.90039)"
+          fill="#D9D9D9"
+        />
+      </svg>
+    </Link>
   </div>
 </template>
 
@@ -30,21 +117,34 @@ const PROPS = defineProps(["title", "cost", "caseType"]);
 }
 
 .car-info-block {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 .block {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .props-data {
-    font-size: 1.125rem;
+  font-size: 1.125rem;
 }
 
 .add-data {
-    font-size: .9375rem;
-    color: var(--add-info-color);
+  font-size: 0.9375rem;
+  color: var(--add-info-color);
+}
+
+a.about-car {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  width: 100%;
+  height: 55px;
+  background-color: var(--dark-red-color);
+  margin-top: 20px;
+  border-radius: 8px;
 }
 </style>
