@@ -1,14 +1,14 @@
 export const PROVIDERS = [
     {
         id: 1,
-        title: 'google',
+        title: "github",
     },
     {
         id: 2,
-        title: 'github',
+        title: "google",
     },
     {
         id: 3,
-        title: 'yandex',
+        title: "yandex",
     },
 ];

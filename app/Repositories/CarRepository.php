@@ -10,7 +10,7 @@ class CarRepository implements CarRepositoryInterface
 {
     public function getAllCars()
     {
-        return CarModel::with(['carCategory', 'carBrand'])->paginate(1);
+        return CarModel::with(['carCategory', 'carBrand'])->paginate(6);
     }
 
     public function getAllCategories()
